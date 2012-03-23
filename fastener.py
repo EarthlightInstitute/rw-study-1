@@ -4,7 +4,6 @@
 fastener.py
 
 Created by Erik Evenson on 2012-03-22.
-Copyright (c) 2012 3E Enterprises, LLC. All rights reserved.
 """
 
 import sys
