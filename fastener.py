@@ -10,7 +10,6 @@ import sys
 import os
 
 FREECADPATH = '/usr/lib/freecad/lib'
-SAVEPATH = '/mnt/hgfs/eevenson/Documents/Projects/FreeCADScripting'
 sys.path.append(FREECADPATH)
 
 class Fastener():
@@ -29,8 +28,8 @@ class Fastener():
 		part = FreeCAD.ActiveDocument.addObject("Part::Feature",name)
 		
 		# Just create a simple object for now.
-		fastener = Part.makeBox(size, size, size)
-		part.Shape = fastener
+		shape = Part.makeBox(size, size, size)
+		part.Shape = shape
 
 		return part
 		
@@ -48,8 +47,8 @@ def main():
 	"""
 	Generates a sample default fastener.
 	"""
-	fastener = Fastener()
-	print fastener
+	bolt = Fastener()
+	print bolt
 
 
 if __name__ == '__main__':
