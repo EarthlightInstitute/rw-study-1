@@ -42,7 +42,7 @@ class Fastener():
 		Returns a dictionary of strength parameters.
 		"""
 		
-		return {}
+		return {'axial': 10000, 'shear': 5000}
 
 
 def main():
