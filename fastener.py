@@ -12,26 +12,29 @@ import os
 FREECADPATH = '/usr/lib/freecad/lib'
 sys.path.append(FREECADPATH)
 
+import FreeCAD
+import Part
+
 class Fastener():
 	
-	def representation(self):
-		
-		"""
-		Returns a CAD representation of the fastener.  Defaults to a FreeCAD object.
-		"""
-		
-		import FreeCAD
-		import Part
+	def __init__(self):
 
-		name = "fastener"
-		size = 10
-		part = FreeCAD.ActiveDocument.addObject("Part::Feature",name)
+		self.name = "fastener"
+		self.size = 10
+	
+	def add_freecad_rep(self,doc):
+		
+		"""
+		Adds a FreeCAD representation of the fastener to doc.
+		"""
+		
+		self.part = doc.addObject("Part::Feature",self.name)
 		
 		# Just create a simple object for now.
-		shape = Part.makeBox(size, size, size)
-		part.Shape = shape
-
-		return part
+		self.shape = Part.makeBox(self.size, self.size, self.size)
+		self.part.Shape = self.shape
+		
+		return
 		
 	def strength(self):
 		
