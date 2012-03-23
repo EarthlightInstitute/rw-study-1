@@ -8,7 +8,7 @@ Created by Erik Evenson on 2012-03-22.
 
 import sys
 import os
-import fastener
+from realware import fastener
 
 FREECADPATH = '/usr/lib/freecad/lib'
 SAVEPATH = '.'
